@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SecureWeb Manager</title>
+
+    <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="responsive.css">
+
+</head>
+
+<body data-tema="claro">
+
+<header class="header">
+
+    <div class="logo">
+
+        <h1>SecureWeb Manager</h1>
+        <p>Sistema Web de Gestión de Acceso y Preferencias</p>
+
+    </div>
+
+    <div id="reloj" class="reloj"></div>
+
+</header>
+
+<nav class="menu">
+
+    <button class="menu-btn active" data-section="registro">
+        Registro
+    </button>
+
+    <button class="menu-btn" data-section="login">
+        Login
+    </button>
+
+    <button class="menu-btn" data-section="regex">
+        Expresiones Regulares
+    </button>
+
+    <button class="menu-btn" data-section="encriptacion">
+        Encriptación
+    </button>
+
+    <button class="menu-btn" data-section="cookies">
+        Cookies
+    </button>
+
+    <button class="menu-btn" data-section="storage">
+        Storage
+    </button>
+
+    <button class="menu-btn" data-section="dashboard">
+        Dashboard
+    </button>
+
+</nav>
+
+<main>
+
+<!-- ================= REGISTRO ================= -->
+
+<section id="registro" class="modulo visible">
+
+<div class="card">
+
+<h2>Registro Inteligente</h2>
+
+<form id="registroForm">
+
+<div class="grid">
+
+<div class="campo">
+
+<label>Nombre Completo</label>
+
+<input
+type="text"
+id="nombre"
+placeholder="Ingrese su nombre completo">
+
+<small id="errorNombre"></small>
+
+</div>
+
+<div class="campo">
+
+<label>Correo Electrónico</label>
+
+<input
+type="email"
+id="correo"
+placeholder="ejemplo@gmail.com">
+
+<small id="errorCorreo"></small>
+
+</div>
+
+<div class="campo">
+
+<label>Teléfono</label>
+
+<input
+type="text"
+id="telefono"
+placeholder="12345678">
+
+<small id="errorTelefono"></small>
+
+</div>
+
+<div class="campo">
+
+<label>Fecha de Nacimiento</label>
+
+<input
+type="date"
+id="fechaNacimiento">
+
+<small id="errorFecha"></small>
+
+</div>
+
+<div class="campo">
+
+<label>Usuario</label>
+
+<input
+type="text"
+id="usuario">
+
+<small id="errorUsuario"></small>
+
+</div>
+
+<div class="campo">
+
+<label>Contraseña</label>
+
+<input
+type="password"
+id="password">
+
+<div class="barra-password">
+
+<div id="passwordStrength"></div>
+
+</div>
+
+<p id="passwordNivel"></p>
+
+<small id="errorPassword"></small>
+
+</div>
+
+<div class="campo">
+
+<label>Confirmar Contraseña</label>
+
+<input
+type="password"
+id="confirmPassword">
+
+<small id="errorConfirmPassword"></small>
+
+</div>
+
+</div>
+
+<div class="botones">
+
+<button type="submit">
+
+Registrar Usuario
+
+</button>
+
+<button type="reset">
+
+Limpiar
+
+</button>
+
+</div>
+
+</form>
+
+</div>
+
+</section>
+
+<!-- ================= LOGIN ================= -->
+
+<section id="login" class="modulo">
+
+<div class="card">
+
+<h2>Inicio de Sesión</h2>
+
+<form id="loginForm">
+
+<div class="campo">
+
+<label>Usuario</label>
+
+<input
+type="text"
+id="loginUsuario">
+
+</div>
+
+<div class="campo">
+
+<label>Contraseña</label>
+
+<input
+type="password"
+id="loginPassword">
+
+</div>
+
+<button type="submit">
+
+Ingresar
+
+</button>
+
+</form>
+
+<div id="mensajeLogin"></div>
+
+<div class="botones">
+
+    <button type="button" id="btnCerrarSesion" class="privado">
+
+        Cerrar Sesión
+
+    </button>
+
+</div>
+
+<div id="infoSistema" class="privado"></div>
+
+</div>
+
+</section>
+
+<!-- ================= REGEX ================= -->
+
+<section id="regex" class="modulo">
+
+<div class="card">
+
+<h2>Motor de Expresiones Regulares</h2>
+
+<div class="campo">
+
+<label>Expresión Regular</label>
+
+<input
+type="text"
+id="regexInput"
+placeholder="Ejemplo: [A-Z]+">
+
+</div>
+
+<div class="campo">
+
+<label>Texto</label>
+
+<textarea
+id="regexTexto"
+rows="7"></textarea>
+
+</div>
+
+<div class="botones">
+
+<button id="btnRegex">
+
+Buscar Coincidencias
+
+</button>
+
+<button id="btnReplace">
+
+Resaltar Coincidencias
+
+</button>
+
+</div>
+
+<div id="resultadoRegex"></div>
+
+</div>
+
+</section>
+
+<!-- ================= ENCRIPTACIÓN ================= -->
+
+<section id="encriptacion" class="modulo">
+
+<div class="card">
+
+<h2>Encriptador Personalizado</h2>
+
+<textarea
+id="textoOriginal"
+rows="8"
+placeholder="Ingrese texto..."></textarea>
+
+<div class="botones">
+
+<button id="btnEncriptar">
+
+Encriptar
+
+</button>
+
+<button id="btnDesencriptar">
+
+Desencriptar
+
+</button>
+
+</div>
+
+<textarea
+id="textoResultado"
+rows="8"
+readonly></textarea>
+
+<div class="estadisticas">
+
+<p id="caracteresAntes"></p>
+
+<p id="caracteresDespues"></p>
+
+<p id="fechaOperacion"></p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= COOKIES ================= -->
+
+<section id="cookies" class="modulo">
+
+<div class="card">
+
+<h2>Administrador de Cookies</h2>
+
+<div id="cookiesInfo"></div>
+
+<div class="botones">
+
+<button id="btnMostrarCookies">
+
+Mostrar Cookies
+
+</button>
+
+<button id="btnEditarCookie">
+
+Editar Cookie
+
+</button>
+
+<button id="btnEliminarCookie">
+
+Eliminar Cookie
+
+</button>
+
+<button id="btnEliminarTodas">
+
+Eliminar Todas
+
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= STORAGE ================= -->
+
+<section id="storage" class="modulo">
+
+<div class="card">
+
+<h2>Administrador de Storage</h2>
+
+<div class="botones">
+
+<button id="btnExportarJSON">
+
+Exportar JSON
+
+</button>
+
+<button id="btnBuscarUsuario">
+
+Buscar Usuario
+
+</button>
+
+<button id="btnEliminarUsuario">
+
+Eliminar Usuario
+
+</button>
+
+</div>
+
+<div id="storageInfo"></div>
+
+</div>
+
+</section>
+
+<!-- ================= DASHBOARD ================= -->
+
+<section id="dashboard" class="modulo">
+
+<h2>Dashboard Administrativo</h2>
+
+<div class="dashboard-cards">
+
+    <div class="dashboard-card">
+
+        <div class="card-icon" style="background:#dbeafe;color:#1d4ed8;">U</div>
+
+        <h3>Usuarios</h3>
+
+        <span id="totalUsuarios">0</span>
+
+    </div>
+
+    <div class="dashboard-card">
+
+        <div class="card-icon" style="background:#fef3c7;color:#b45309;">C</div>
+
+        <h3>Cookies</h3>
+
+        <span id="totalCookies">0</span>
+
+    </div>
+
+    <div class="dashboard-card">
+
+        <div class="card-icon" style="background:#dcfce7;color:#166534;">L</div>
+
+        <h3>Local Storage</h3>
+
+        <span id="totalHistorial">0</span>
+
+    </div>
+
+    <div class="dashboard-card">
+
+        <div class="card-icon" style="background:#ede9fe;color:#6d28d9;">S</div>
+
+        <h3>Session Storage</h3>
+
+        <span id="totalSesiones">0</span>
+
+    </div>
+
+    <div class="dashboard-card">
+
+        <div class="card-icon" style="background:#fee2e2;color:#991b1b;">E</div>
+
+        <h3>Textos Encriptados</h3>
+
+        <span id="totalEncriptados">0</span>
+
+    </div>
+
+</div>
+
+<div class="dashboard-table">
+
+    <h2>Usuarios Registrados</h2>
+
+    <table>
+
+        <thead>
+
+        <tr>
+
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Usuario</th>
+            <th>Correo</th>
+            <th>Edad</th>
+            <th>Visitas</th>
+            <th>Último Acceso</th>
+
+        </tr>
+
+        </thead>
+
+        <tbody id="tablaUsuarios">
+
+        </tbody>
+
+    </table>
+
+</div>
+
+<input type="text" id="buscarDashboard" placeholder="Buscar...">
+
+<button id="btnExportarTabla">Exportar Tabla</button>
+
+</section>
+
+</main>
+
+<footer>
+
+<p>
+
+© 2026 SecureWeb Manager
+
+</p>
+
+</footer>
+
+<script src="utilidades.js"></script>
+<script src="validaciones.js"></script>
+<script src="autenticacion.js"></script>
+<script src="seguridad.js"></script>
+<script src="regex.js"></script>
+<script src="cookies.js"></script>
+<script src="storage.js"></script>
+<script src="dashboard.js"></script>
+<script src="app.js"></script>
+
+</body>
+
+</html>
+
