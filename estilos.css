@@ -1,0 +1,1203 @@
+/*=====================================================
+    SECUREWEB MANAGER
+    Diseñado por: Edgar Castellanos
+======================================================*/
+
+:root{
+
+--primario:#2563eb;
+--primarioHover:#1d4ed8;
+
+--secundario:#06b6d4;
+
+--verde:#16a34a;
+
+--rojo:#dc2626;
+
+--naranja:#f59e0b;
+
+--gris:#64748b;
+
+--grisClaro:#f1f5f9;
+
+--oscuro:#0f172a;
+
+--blanco:#ffffff;
+
+--radio:16px;
+
+--sombra:0 15px 35px rgba(0,0,0,.18);
+
+--transicion:.35s;
+
+font-size:16px;
+
+font-family:
+
+"Segoe UI",
+Tahoma,
+Geneva,
+Verdana,
+sans-serif;
+
+}
+
+*{
+
+margin:0;
+
+padding:0;
+
+box-sizing:border-box;
+
+}
+
+body{
+
+background:
+
+linear-gradient(
+135deg,
+#2563eb,
+#0f172a
+);
+
+min-height:100vh;
+
+color:var(--oscuro);
+
+}
+
+/* Tema oscuro opcional controlado por data-tema */
+body[data-tema="oscuro"]{
+
+background:
+linear-gradient(135deg,#0f172a,#020617);
+
+color:#e2e8f0;
+
+}
+
+a{
+
+text-decoration:none;
+
+}
+
+button{
+
+cursor:pointer;
+
+font-size:1rem;
+
+border:none;
+
+transition:var(--transicion);
+
+}
+
+input,
+textarea,
+select{
+
+outline:none;
+
+border:none;
+
+font-size:1rem;
+
+font-family:inherit;
+
+}
+
+textarea{
+
+resize:none;
+
+}
+
+/*============================
+HEADER
+=============================*/
+
+.header{
+
+width:100%;
+
+padding:30px;
+
+background:
+
+rgba(255,255,255,.10);
+
+backdrop-filter:blur(12px);
+
+box-shadow:var(--sombra);
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+flex-wrap:wrap;
+
+}
+
+.logo{
+
+text-align:center;
+
+flex:1;
+
+}
+
+.logo h1{
+
+font-size:2.5rem;
+
+color:white;
+
+letter-spacing:1px;
+
+}
+
+.logo p{
+
+margin-top:10px;
+
+font-size:1rem;
+
+color:white;
+
+opacity:.9;
+
+}
+
+/* Reloj del sistema */
+.reloj{
+
+color:white;
+
+font-weight:bold;
+
+font-size:1rem;
+
+background:rgba(255,255,255,.15);
+
+padding:10px 18px;
+
+border-radius:50px;
+
+border:1px solid rgba(255,255,255,.25);
+
+min-width:220px;
+
+text-align:center;
+
+}
+
+/*==========================
+MENU
+==========================*/
+
+.menu{
+
+display:flex;
+
+flex-wrap:wrap;
+
+justify-content:center;
+
+gap:15px;
+
+padding:25px;
+
+}
+
+.menu button{
+
+padding:
+
+14px
+28px;
+
+border-radius:50px;
+
+background:white;
+
+color:#2563eb;
+
+font-weight:700;
+
+box-shadow:var(--sombra);
+
+}
+
+.menu button:hover{
+
+transform:translateY(-4px);
+
+}
+
+.menu button.active{
+
+background:#2563eb;
+
+color:white;
+
+}
+
+/*=========================
+MAIN
+==========================*/
+
+main{
+
+width:min(1300px,95%);
+
+margin:auto;
+
+padding:30px;
+
+}
+
+/*=========================
+MODULOS
+==========================*/
+
+.modulo{
+
+display:none;
+
+animation:fade .45s;
+
+}
+
+.modulo.visible{
+
+display:block;
+
+}
+
+@keyframes fade{
+
+from{
+
+opacity:0;
+
+transform:translateY(25px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+/*============================
+CARD
+============================*/
+
+.card{
+
+background:white;
+
+padding:35px;
+
+border-radius:20px;
+
+box-shadow:var(--sombra);
+
+margin-bottom:40px;
+
+}
+
+.card h2{
+
+text-align:center;
+
+margin-bottom:30px;
+
+font-size:2rem;
+
+color:#2563eb;
+
+}
+
+/*=============================
+GRID
+==============================*/
+
+.grid{
+
+display:grid;
+
+grid-template-columns:
+
+repeat(
+auto-fit,
+minmax(300px,1fr)
+);
+
+gap:22px;
+
+}
+
+/*==========================
+CAMPOS
+==========================*/
+
+.campo{
+
+display:flex;
+
+flex-direction:column;
+
+gap:8px;
+
+}
+
+.campo label{
+
+font-weight:bold;
+
+color:#1e293b;
+
+}
+
+.campo input{
+
+padding:15px;
+
+border:2px solid #dbe4ee;
+
+border-radius:12px;
+
+transition:.3s;
+
+}
+
+.campo input:focus{
+
+border-color:#2563eb;
+
+box-shadow:
+
+0 0 15px
+
+rgba(37,99,235,.25);
+
+}
+
+textarea{
+
+padding:18px;
+
+border-radius:15px;
+
+border:2px solid #dbe4ee;
+
+min-height:180px;
+
+}
+
+/*=========================
+BOTONES
+==========================*/
+
+.botones{
+
+display:flex;
+
+flex-wrap:wrap;
+
+gap:15px;
+
+justify-content:center;
+
+margin-top:30px;
+
+}
+
+.botones button{
+
+padding:
+
+15px
+30px;
+
+background:#2563eb;
+
+color:white;
+
+font-weight:bold;
+
+border-radius:10px;
+
+}
+
+.botones button:hover{
+
+background:#1d4ed8;
+
+transform:translateY(-3px);
+
+}
+
+/*=========================
+BARRA PASSWORD
+==========================*/
+
+.barra-password{
+
+margin-top:10px;
+
+height:12px;
+
+background:#e2e8f0;
+
+border-radius:50px;
+
+overflow:hidden;
+
+}
+
+#passwordStrength{
+
+height:100%;
+
+width:0%;
+
+background:red;
+
+transition:.4s;
+
+}
+
+#passwordNivel{
+
+margin-top:8px;
+
+font-weight:bold;
+
+}
+
+/*==========================
+ERRORES
+==========================*/
+
+small{
+
+font-size:.85rem;
+
+color:#dc2626;
+
+min-height:18px;
+
+}
+
+/*==========================
+TABLAS
+==========================*/
+
+.tabla{
+
+overflow:auto;
+
+margin-top:30px;
+
+}
+
+table{
+
+width:100%;
+
+border-collapse:collapse;
+
+background:white;
+
+}
+
+thead{
+
+background:#2563eb;
+
+color:white;
+
+}
+
+th{
+
+padding:16px;
+
+}
+
+td{
+
+padding:15px;
+
+text-align:center;
+
+border-bottom:1px solid #ddd;
+
+}
+
+tbody tr:hover{
+
+background:#f8fafc;
+
+}
+
+/*============================
+FOOTER
+============================*/
+
+footer{
+
+padding:35px;
+
+text-align:center;
+
+color:white;
+
+font-weight:bold;
+
+}
+
+/*====================================================
+    DASHBOARD.CSS
+    SecureWeb Manager
+====================================================*/
+
+/* TÍTULO DEL DASHBOARD */
+
+#dashboard h2{
+
+    text-align:center;
+    font-size:2.2rem;
+    color:#ffffff;
+    margin-bottom:35px;
+
+}
+
+/*==============================
+GRID DE ESTADÍSTICAS
+==============================*/
+
+.dashboard-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+    gap:25px;
+
+    margin-bottom:40px;
+
+}
+
+/*==============================
+TARJETAS
+==============================*/
+
+.box{
+
+    background:rgba(255,255,255,.12);
+
+    backdrop-filter:blur(15px);
+
+    border:1px solid rgba(255,255,255,.25);
+
+    border-radius:20px;
+
+    padding:30px;
+
+    color:white;
+
+    text-align:center;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.20);
+
+    transition:.35s;
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.box::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:-40px;
+
+    right:-40px;
+
+    width:120px;
+
+    height:120px;
+
+    background:rgba(255,255,255,.12);
+
+    border-radius:50%;
+
+}
+
+.box:hover{
+
+    transform:translateY(-8px);
+
+}
+
+.box h3{
+
+    font-size:1.15rem;
+
+    margin-bottom:15px;
+
+    font-weight:600;
+
+}
+
+.box p{
+
+    font-size:2.8rem;
+
+    font-weight:bold;
+
+}
+
+/*==============================
+TABLA
+==============================*/
+
+.tabla{
+
+    background:white;
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.18);
+
+}
+
+.tabla table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+}
+
+.tabla thead{
+
+    background:#2563eb;
+
+    color:white;
+
+}
+
+.tabla th{
+
+    padding:18px;
+
+    font-size:1rem;
+
+}
+
+.tabla td{
+
+    padding:16px;
+
+    border-bottom:1px solid #e5e7eb;
+
+}
+
+.tabla tbody tr{
+
+    transition:.3s;
+
+}
+
+.tabla tbody tr:hover{
+
+    background:#eff6ff;
+
+}
+
+/*==============================
+ESTADÍSTICAS
+==============================*/
+
+.estadisticas{
+
+    margin-top:25px;
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:15px;
+
+}
+
+.estadisticas p{
+
+    flex:1;
+
+    min-width:220px;
+
+    background:#f8fafc;
+
+    border-left:6px solid #2563eb;
+
+    padding:15px;
+
+    border-radius:10px;
+
+    font-weight:bold;
+
+}
+
+/*==============================
+COOKIES
+==============================*/
+
+#cookiesInfo{
+
+    background:white;
+
+    padding:20px;
+
+    border-radius:12px;
+
+    margin-top:20px;
+
+    margin-bottom:20px;
+
+    min-height:120px;
+
+    border:2px dashed #2563eb;
+
+    overflow:auto;
+
+}
+
+/*==============================
+STORAGE
+==============================*/
+
+#storageInfo{
+
+    background:white;
+
+    margin-top:20px;
+
+    border-radius:12px;
+
+    padding:20px;
+
+    min-height:120px;
+
+    border:2px dashed #16a34a;
+
+}
+
+/*==============================
+LOGIN
+==============================*/
+
+#mensajeLogin{
+
+    margin-top:20px;
+
+    padding:15px;
+
+    border-radius:10px;
+
+    text-align:center;
+
+    font-weight:bold;
+
+}
+
+/*==============================
+REGEX
+==============================*/
+
+#resultadoRegex{
+
+    margin-top:25px;
+
+    padding:18px;
+
+    background:#f8fafc;
+
+    border-radius:12px;
+
+    min-height:120px;
+
+    white-space:pre-wrap;
+
+    border-left:6px solid #06b6d4;
+
+}
+
+/*==============================
+ANIMACIONES
+==============================*/
+
+@keyframes aparecer{
+
+    from{
+
+    opacity:0;
+
+    transform:translateY(20px);
+
+    }
+
+    to{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+    }
+
+}
+
+.box{
+
+    animation:aparecer .5s ease;
+
+}
+
+.tabla{
+
+    animation:aparecer .7s ease;
+
+}
+
+/*==============================
+SCROLL PERSONALIZADO
+==============================*/
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+    height:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#dbeafe;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#2563eb;
+
+    border-radius:50px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:#1d4ed8;
+
+}
+
+/*==========================================
+    RESPONSIVE.CSS
+    SecureWeb Manager
+===========================================*/
+
+/* ---------- Pantallas grandes ---------- */
+
+@media (max-width:1200px){
+
+main{
+
+    width:96%;
+
+}
+
+.dashboard-grid{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+}
+
+/* ---------- Tablets ---------- */
+
+@media (max-width:992px){
+
+.header{
+
+    padding:25px;
+
+}
+
+.logo h1{
+
+    font-size:2rem;
+
+}
+
+.logo p{
+
+    font-size:.95rem;
+
+}
+
+.menu{
+
+    gap:12px;
+
+}
+
+.menu button{
+
+    width:calc(50% - 10px);
+
+}
+
+.grid{
+
+    grid-template-columns:1fr;
+
+}
+
+.dashboard-grid{
+
+    grid-template-columns:1fr 1fr;
+
+}
+
+.botones{
+
+    flex-direction:column;
+
+}
+
+.botones button{
+
+    width:100%;
+
+}
+
+.card{
+
+    padding:25px;
+
+}
+
+}
+
+/* ---------- Celulares ---------- */
+
+@media (max-width:768px){
+
+body{
+
+    font-size:15px;
+
+}
+
+.header{
+
+    padding:20px;
+
+}
+
+.logo h1{
+
+    font-size:1.7rem;
+
+}
+
+.logo p{
+
+    font-size:.9rem;
+
+}
+
+.menu{
+
+    flex-direction:column;
+
+}
+
+.menu button{
+
+    width:100%;
+
+}
+
+main{
+
+    padding:15px;
+
+}
+
+.card{
+
+    padding:20px;
+
+}
+
+.card h2{
+
+    font-size:1.5rem;
+
+}
+
+.campo input,
+textarea{
+
+    font-size:.95rem;
+
+    padding:13px;
+
+}
+
+.dashboard-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+.box{
+
+    padding:22px;
+
+}
+
+.box p{
+
+    font-size:2rem;
+
+}
+
+.estadisticas{
+
+    flex-direction:column;
+
+}
+
+.estadisticas p{
+
+    width:100%;
+
+}
+
+.tabla{
+
+    overflow-x:auto;
+
+}
+
+table{
+
+    min-width:650px;
+
+}
+
+footer{
+
+    padding:25px;
+
+    font-size:.9rem;
+
+}
+
+}
+
+/* ---------- Celulares pequeños ---------- */
+
+@media (max-width:480px){
+
+.logo h1{
+
+    font-size:1.45rem;
+
+}
+
+.logo p{
+
+    display:none;
+
+}
+
+.card{
+
+    border-radius:12px;
+
+}
+
+.campo label{
+
+    font-size:.9rem;
+
+}
+
+.menu button{
+
+    font-size:.9rem;
+
+    padding:12px;
+
+}
+
+.botones button{
+
+    font-size:.9rem;
+
+    padding:14px;
+
+}
+
+.box h3{
+
+    font-size:1rem;
+
+}
+
+.box p{
+
+    font-size:1.8rem;
+
+}
+
+}
+
+/* ---------- Animaciones suaves ---------- */
+
+@media (prefers-reduced-motion:reduce){
+
+*{
+
+    animation:none !important;
+
+    transition:none !important;
+
+    scroll-behavior:auto !important;
+
+}
+
+}
+
