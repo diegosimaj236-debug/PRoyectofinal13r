@@ -1,0 +1,171 @@
+/*=========================================================
+    SecureWeb Manager
+    responsive.css
+=========================================================*/
+
+
+/*==============================
+    LAPTOPS
+==============================*/
+
+@media(max-width:1200px){
+
+
+.dashboard-container{
+
+    padding:25px;
+
+}
+
+
+.dashboard-title{
+
+    font-size:2rem;
+
+}
+
+
+}
+
+
+/*==============================
+    TABLETS
+==============================*/
+
+
+@media(max-width:900px){
+
+
+.dashboard-cards{
+
+    grid-template-columns:
+
+    repeat(2,1fr);
+
+}
+
+
+.dashboard-table{
+
+    overflow-x:auto;
+
+}
+
+
+.dashboard-table table{
+
+    min-width:700px;
+
+}
+
+
+}
+
+
+
+/*==============================
+    MÓVILES
+==============================*/
+
+
+@media(max-width:600px){
+
+body{
+
+    overflow-x:hidden;
+
+}
+
+
+.dashboard-container{
+
+    padding:15px;
+
+}
+
+
+.dashboard-title{
+
+    font-size:1.5rem;
+
+}
+
+
+.dashboard-cards{
+
+    grid-template-columns:1fr;
+
+}
+
+
+
+.dashboard-card{
+
+    padding:20px;
+
+}
+
+
+
+.dashboard-card span{
+
+    font-size:2rem;
+
+}
+
+
+
+.dashboard-table{
+
+    border-radius:12px;
+
+}
+
+
+.dashboard-table h2{
+
+    font-size:1.2rem;
+
+}
+
+
+.reportes{
+
+    grid-template-columns:1fr;
+
+}
+
+.actividad{
+
+    padding:15px;
+
+}
+
+
+}
+
+
+/*==============================
+    MÓVILES PEQUEÑOS
+==============================*/
+
+
+@media(max-width:400px){
+
+
+.dashboard-card h3{
+
+    font-size:.9rem;
+
+}
+
+
+.dashboard-card span{
+
+    font-size:1.7rem;
+
+}
+
+
+}
+
