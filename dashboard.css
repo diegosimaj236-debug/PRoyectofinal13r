@@ -1,0 +1,403 @@
+/*=========================================================
+    SecureWeb Manager
+    dashboard.css
+=========================================================*/
+
+
+/*==============================
+    DASHBOARD GENERAL
+==============================*/
+
+.dashboard-container{
+
+    width:100%;
+
+    padding:30px;
+
+}
+
+
+.dashboard-title{
+
+    font-size:2.2rem;
+
+    font-weight:800;
+
+    margin-bottom:30px;
+
+    text-align:center;
+
+}
+
+
+/*==============================
+    TARJETAS ESTADÍSTICAS
+==============================*/
+
+.dashboard-cards{
+
+    display:grid;
+
+    grid-template-columns:
+
+    repeat(auto-fit,minmax(220px,1fr));
+
+    gap:25px;
+
+    margin-bottom:35px;
+
+}
+
+
+.dashboard-card{
+
+    background:
+
+    rgba(255,255,255,0.15);
+
+    backdrop-filter:
+
+    blur(15px);
+
+    border-radius:20px;
+
+    padding:25px;
+
+    box-shadow:
+
+    0 10px 30px rgba(0,0,0,.15);
+
+    border:
+
+    1px solid rgba(255,255,255,.25);
+
+    transition:.3s;
+
+    color:#fff;
+
+    animation:aparecer .5s ease;
+
+}
+
+
+.dashboard-card:hover{
+
+    transform:
+
+    translateY(-8px);
+
+}
+
+
+.dashboard-card h3{
+
+    font-size:1rem;
+
+    margin-bottom:15px;
+
+}
+
+
+.dashboard-card span{
+
+    font-size:2.5rem;
+
+    font-weight:bold;
+
+}
+
+
+/*==============================
+    ICONOS
+==============================*/
+
+.card-icon{
+
+    width:55px;
+
+    height:55px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:50%;
+
+    font-size:1.8rem;
+
+    margin-bottom:15px;
+
+}
+
+
+/*==============================
+    TABLAS
+==============================*/
+
+
+.dashboard-table{
+
+    background:white;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    box-shadow:
+
+    0 10px 30px rgba(0,0,0,.15);
+
+    margin-bottom:35px;
+
+    animation:aparecer .7s ease;
+
+}
+
+
+.dashboard-table h2{
+
+    padding:20px;
+
+    color:#2563eb;
+
+}
+
+
+.dashboard-table table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+}
+
+
+.dashboard-table th{
+
+    padding:15px;
+
+    text-align:left;
+
+    background:#2563eb;
+
+    color:white;
+
+}
+
+
+.dashboard-table td{
+
+    padding:15px;
+
+    border-bottom:
+
+    1px solid #ddd;
+
+    text-align:left;
+
+}
+
+
+.dashboard-table tr:hover{
+
+    background:#f1f5f9;
+
+}
+
+
+/*==============================
+    ESTADOS
+==============================*/
+
+
+.estado-activo{
+
+    padding:6px 12px;
+
+    border-radius:20px;
+
+    background:#dcfce7;
+
+    color:#166534;
+
+    font-weight:bold;
+
+}
+
+
+.estado-inactivo{
+
+    padding:6px 12px;
+
+    border-radius:20px;
+
+    background:#fee2e2;
+
+    color:#991b1b;
+
+    font-weight:bold;
+
+}
+
+
+/*==============================
+    PANEL DE ACTIVIDAD
+==============================*/
+
+
+.actividad{
+
+    background:white;
+
+    border-radius:20px;
+
+    padding:25px;
+
+}
+
+
+.actividad-item{
+
+    padding:15px;
+
+    border-left:
+
+    4px solid #2563eb;
+
+    margin-bottom:15px;
+
+    background:#f8fafc;
+
+}
+
+
+/*==============================
+    REPORTES
+==============================*/
+
+
+.reportes{
+
+    display:grid;
+
+    grid-template-columns:
+
+    repeat(auto-fit,minmax(250px,1fr));
+
+    gap:20px;
+
+}
+
+
+.reporte-box{
+
+    padding:25px;
+
+    border-radius:18px;
+
+    background:white;
+
+    box-shadow:
+
+    0 8px 20px rgba(0,0,0,.12);
+
+}
+
+
+
+.reporte-box h3{
+
+    margin-bottom:10px;
+
+}
+
+
+.reporte-box p{
+
+    font-size:1.8rem;
+
+    font-weight:bold;
+
+}
+
+
+/*==============================
+    ANIMACIONES
+==============================*/
+
+
+.dashboard-card,
+.dashboard-table,
+.actividad,
+.reporte-box{
+
+    animation:
+
+    aparecer .5s ease;
+
+}
+
+@keyframes aparecer{
+
+
+from{
+
+opacity:0;
+
+transform:
+
+translateY(25px);
+
+}
+
+
+to{
+
+opacity:1;
+
+transform:
+
+translateY(0);
+
+}
+
+
+}
+
+/* Utilidad: input buscador y botón exportar en la sección dashboard */
+#buscarDashboard{
+
+    padding:12px;
+
+    border-radius:10px;
+
+    border:2px solid #dbe4ee;
+
+    width:60%;
+
+    margin:20px 0;
+
+}
+
+#btnExportarTabla{
+
+    padding:12px 25px;
+
+    background:#16a34a;
+
+    color:white;
+
+    border-radius:10px;
+
+    font-weight:bold;
+
+}
+
+#btnExportarTabla:hover{
+
+    background:#15803d;
+
+}
+
